@@ -4,8 +4,6 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-	{% for detail in dogs_details %}
-
 
 <!-- ZA ALBUM SLIKE  -->
 
@@ -110,7 +108,7 @@ img {
 }
 </style>
 <body>
-
+  {% for detail in dogs_details %}
 
 	<!-- Ovde vidis kao kako ide za slike...kad bi moglo kao ono tvoje prvo sa IF   -->
 
