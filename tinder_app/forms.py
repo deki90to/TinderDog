@@ -14,12 +14,12 @@ class DogForm(forms.ModelForm):
 		'info':'',
 		'phone_no':'',
 		'date':'' ,
-		'image':'',
-		'image2':'',
-		'image3':'',
-		'image4':'',
-		'image5':'',
-		'image6':'',
+		'image':'Slika 1',
+		'image2':'Slika 2',
+		'image3':'Slika 3',
+		'image4':'Slika 4',
+		'image5':'Slika 5',
+		'image6':'Slika 6',
 		}
 
 		widgets = {
