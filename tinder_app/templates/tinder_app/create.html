@@ -5,10 +5,16 @@
 {% block content %}
 {% if user.is_authenticated %}
 
+	{% if created %}
+	<br>
+		<h3> Successfully Added! </h3>
+		Go back to <a href="{% url 'home' %}">home page</a>.
+		
+	{% else %}
 
 	<form method="POST" enctype="multipart/form-data">
-	{% csrf_token %}
-	{{ form.as_p }}
+		{% csrf_token %}
+		{{ form.as_p }}
 
 		<input type="submit" name="">
 	</form>
@@ -17,6 +23,7 @@
         var name = '{{ user.id }}';
         document.getElementById('admin').value = name;
     </script>
+	{% endif %}
 
 {% endif %}
 {% endblock %}

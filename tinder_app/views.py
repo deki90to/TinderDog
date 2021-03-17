@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . models import *
 from . forms import *
+from django.http import HttpResponseRedirect
 
 
 
@@ -51,11 +52,18 @@ def create(request):
 	dogs = Dog.objects.all()
 	form = DogForm()
 
+	created = False
+
 	if request.method == 'POST':
 		form = DogForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return redirect('home')
+			return redirect('/create?created=True')
 
-	context = {'dogs':dogs, 'form':form}
+	else:
+		form = DogForm()
+		if 'created' in request.GET:
+			created = True
+
+	context = {'dogs':dogs, 'form':form, 'created':created}
 	return render(request, 'tinder_app/create.html', context)
