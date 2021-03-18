@@ -48,6 +48,7 @@ def delete(request, pk):
 	return render(request, 'tinder_app/delete.html', context)
 
 
+
 def create(request):
 	dogs = Dog.objects.all()
 	form = DogForm()
@@ -67,3 +68,16 @@ def create(request):
 
 	context = {'dogs':dogs, 'form':form, 'created':created}
 	return render(request, 'tinder_app/create.html', context)
+
+
+
+def search(request):
+	if request.method == 'POST':
+		search = request.POST['search']
+		dogs = Dog.objects.filter(breed__breed__icontains=search)
+
+		context = {'search':search, 'dogs':dogs}
+		return render(request, 'tinder_app/search.html', context)
+
+	else:
+		return render(request, 'tinder_app/search.html')
