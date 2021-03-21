@@ -6,8 +6,9 @@
 
 <center>
 	{% if search %}
-
-	<h1> You searched "{{ search }}" </h1>
+<br>
+	<h5> You searched </h5>
+	<b><h4> "{{ search }}" </h4></b>
 	<hr>
 	<br>
 			
@@ -23,19 +24,16 @@
 		    <br><br>
 		{% endfor %}
 
-	{% else %}
+		{% else %}
+		<br><br>
 
-		<br>
-		<h3> Polje za pretragu je prazno! </h3>
-
-		<br><br><br>
-		<div class="container-fluid">
-		  <form method="POST" class="d-flex" action="{% url 'search' %}">
+		<h5> Polje za pretragu je prazno</h5>
+		<br><br>
+		<form method="POST" class="d-flex" action="{% url 'search' %}">
 		  	{% csrf_token %}
-		    <input class="form-control me-2" type="search" placeholder="Polje Za Pretragu..." aria-label="Search" name="search">
+		    <input class="form-control me-2" type="search" placeholder="Polje Za Pretragu" aria-label="Search" name="search">
 		    <button class="btn btn-primary text-light" type="submit"> Pretrazi </button>
-		  </form>
-		</div>
+		 </form>
 
 	{% endif %}
 </center>

@@ -5,18 +5,21 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-
-
 	{% if created %}
-	<br>
-		<h3> Successfully Added! </h3>
-		Go back to <a href="{% url 'home' %}">home page</a>.
+	<br><br><br>
+
+
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		  <strong>Successfully Added</strong> <br> Go Back To <a href="{% url 'home' %}">Home Page</a>
+		  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
 		
 	{% else %}
 	<br>
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ form.as_p }}
+		
 		<br>
 		<input type="submit" class="btn btn-primary" name="">
 	</form>
@@ -26,8 +29,6 @@
         document.getElementById('admin').value = name;
     </script>
 	{% endif %}
-
-
 
 {% endif %}
 {% endblock %}

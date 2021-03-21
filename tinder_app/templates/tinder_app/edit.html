@@ -3,11 +3,12 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-
+<br>
 <form class="form-group" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
 	{{ form.as_p }}
-		<input type="submit" value="Sacuvaj">
+	
+	<input type="submit" value="Sacuvaj">
 </form>
 
 {% endif %}
