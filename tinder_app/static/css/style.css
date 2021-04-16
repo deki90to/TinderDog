@@ -1,3 +1,24 @@
-/*.container {
-	color:blue;
-}*/
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	justify-content: space-around;
+}
+
+.dog {
+	border: 5px outset;
+	border-radius: 30px;
+	padding: 5px;
+	color: blue;
+	text-shadow: 2px 2px 5px brown;
+}
+
+a:hover {
+  color: black;
+}
+
+input[type=text],
+	[type=password],
+	[type=search]{
+	width: 50%;
+	border-radius: 10px;
+}

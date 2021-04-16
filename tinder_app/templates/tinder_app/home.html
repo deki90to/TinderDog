@@ -15,23 +15,21 @@
 <br>
 
 <center>
-	<div class="card-body">
-		<div class="card" style="width:400px">
+		<div class="grid-container">
+			{% for dog in dogs %}
 
-		{% for dog in dogs %}
+			<div class="dog">
+				<img src="{{ dog.image.url }}">
+				<ul>
+				    <h4 class="card-title"> Rasa: {{ dog.breed }}</h4>
+				    <p class="card-text"> Godiste: {{ dog.birthYear }}</p>
+				    <p class="card-text"> Postavljen: {{ dog.date.date }}</p>
+			    </ul>
+			    <a href="{% url 'details' dog.pk %}" class="btn btn-primary"> Detaljnije </a>
+			</div>
 
-		<img src="{{ dog.image.url }}">
-		<ul>
-		    <h4 class="card-title"> Rasa: {{ dog.breed }}</h4>
-		    <p class="card-text"> Godiste: {{ dog.birthYear }}</p>
-		    <p class="card-text"> Postavljen: {{ dog.date.date }}</p>
-	    </ul>
-	    <a href="{% url 'details' dog.pk %}" class="btn btn-primary"> Detaljnije </a>
-
-		{% endfor %}
-
+			{% endfor %}
 		</div>
-	</div>
 </center>
 	
 {% endif %}
