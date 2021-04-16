@@ -1,10 +1,12 @@
 .grid-container {
+	/*background-color: lightblue;*/
 	display: grid;
 	grid-template-columns: auto auto auto;
 	justify-content: space-around;
 }
 
 .dog {
+	background-color: #b9ffff;
 	border: 5px outset;
 	border-radius: 30px;
 	padding: 5px;
@@ -17,8 +19,42 @@ a:hover {
 }
 
 input[type=text],
-	[type=password],
-	[type=search]{
+	[type=password]{
+	border: 1px solid blue;
 	width: 50%;
-	border-radius: 10px;
+	border-radius: 20px;
+	/*text-align: center;*/
+}
+
+input[type=search] {
+  transition: width 0.5s ease-in-out;
+  width: 30%;
+  border-radius: 20px;
+}
+
+input[type=search]:focus {
+  width: 50%;
+  border-radius: 20px;
+}
+
+button[name="breed"] {
+  background-color: #00BBFF;
+  color: white;
+}
+
+.select.name {
+	color: blue;
+}
+
+select {
+  width: 10%;
+  height: 30px;
+  border-radius: 20px;
+  border-color: blue;
+  padding: 5px;
+  color: blue;
+}
+
+.d-flex {
+	justify-content: center;
 }
