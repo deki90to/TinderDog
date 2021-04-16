@@ -79,5 +79,5 @@ def search(request):
 		context = {'search':search, 'dogs':dogs}
 		return render(request, 'tinder_app/search.html', context)
 
-	else:
-		return render(request, 'tinder_app/search.html')
+	# else:
+	# 	return render(request, 'tinder_app/search.html')
